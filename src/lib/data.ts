@@ -131,6 +131,7 @@ export const timelineEvents: TimelineEvent[] = [
     completed: true,
     icon: "ShieldAlert",
   },
+  // ─── 900€ PAYÉ (VERT) ✅ ───────────────────────────────────────────
   {
     id: "evt-10",
     date: "2026-07-12",
@@ -141,12 +142,28 @@ export const timelineEvents: TimelineEvent[] = [
     facility: "FedEx Distribution Center Salzburg",
     status: "distribution_center",
     description:
-      "Colis au centre de distribution FedEx – En attente du règlement des frais de douane (900,00 €)",
+      "Colis au centre de distribution FedEx – Frais de douane réglés (900,00 €)",
     completed: true,
     icon: "Building",
+    paid: true,
   },
+  // ─── 721€ EN ATTENTE (ORANGE) 🟠 ──────────────────────────────────
   {
     id: "evt-11",
+    date: "2026-07-14",
+    time: "08:30",
+    city: "Salzbourg",
+    country: "Autriche",
+    countryCode: "AT",
+    facility: "FedEx Distribution Center Salzburg",
+    status: "pending_payment",
+    description:
+      "Frais de transport sécurisé des espèces – En attente du règlement (721,00 €)",
+    completed: true,
+    icon: "ShieldAlert",
+  },
+  {
+    id: "evt-12",
     date: "",
     time: "",
     city: "Krispl",
@@ -159,7 +176,7 @@ export const timelineEvents: TimelineEvent[] = [
     icon: "TruckIcon",
   },
   {
-    id: "evt-12",
+    id: "evt-13",
     date: "",
     time: "",
     city: "Krispl",
@@ -275,13 +292,22 @@ export const statsCards: StatCard[] = [
 // ─── Notifications ──────────────────────────────────────────────────
 export const notifications: Notification[] = [
   {
+    id: "notif-0",
+    date: "2026-07-14",
+    time: "08:35",
+    message:
+      "Nouveaux frais détectés : Frais de transport sécurisé des espèces de 721,00 € à régler pour débloquer la livraison.",
+    priority: "high",
+    read: false,
+  },
+  {
     id: "notif-1",
     date: "2026-07-12",
     time: "16:35",
     message:
-      "Votre colis est arrivé au centre de distribution FedEx de Salzbourg. Des frais de douane de 900,00 € sont à régler.",
-    priority: "high",
-    read: false,
+      "Les frais de douane de 900,00 € ont été réglés avec succès. Merci !",
+    priority: "info",
+    read: true,
   },
   {
     id: "notif-2",
@@ -290,7 +316,7 @@ export const notifications: Notification[] = [
     message:
       "Contrôle douanier import terminé à Salzbourg. Frais de dédouanement calculés.",
     priority: "medium",
-    read: false,
+    read: true,
   },
   {
     id: "notif-3",
@@ -379,7 +405,7 @@ export const feeSummary: FeeSummary = {
       description:
         "Droits de douane à l'importation conformément au tarif douanier commun de l'UE – Taux applicable : 4,7 % sur la valeur déclarée",
       category: "customs",
-      status: "validated",
+      status: "paid",
     },
     {
       id: "fee-2",
@@ -388,7 +414,7 @@ export const feeSummary: FeeSummary = {
       description:
         "TVA autrichienne à l'importation au taux de 20 % conformément à l'article 26 UStG",
       category: "tax",
-      status: "validated",
+      status: "paid",
     },
     {
       id: "fee-3",
@@ -397,7 +423,7 @@ export const feeSummary: FeeSummary = {
       description:
         "Frais de gestion et traitement du dossier de dédouanement par FedEx Trade Networks",
       category: "service",
-      status: "validated",
+      status: "paid",
     },
     {
       id: "fee-4",
@@ -406,7 +432,7 @@ export const feeSummary: FeeSummary = {
       description:
         "Frais de manutention en entrepôt sous douane – Stockage temporaire au centre FedEx Salzburg",
       category: "handling",
-      status: "validated",
+      status: "paid",
     },
     {
       id: "fee-5",
@@ -415,7 +441,7 @@ export const feeSummary: FeeSummary = {
       description:
         "Commission pour l'avance des droits et taxes par FedEx au nom du destinataire",
       category: "service",
-      status: "validated",
+      status: "paid",
     },
     // ─── Nouveau frais de 721€ en attente ─────────────────────────────
     {
@@ -428,9 +454,9 @@ export const feeSummary: FeeSummary = {
       status: "pending",
     },
   ],
-  validatedTotal: 900.0,
+  paidTotal: 900.0,
   pendingTotal: 721,
-  totalAmount: 721,
+  totalAmount: 1621,
   currency: "EUR",
   dueDate: "2026-07-16",
   paymentStatus: "pending",
