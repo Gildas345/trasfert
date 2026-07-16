@@ -13,7 +13,8 @@ export type ParcelStatus =
   | "delivered"
   | "delayed"
   | "cancelled"
-  | "pending";
+  | "pending"
+  | "pending_payment";
 
 export type ServiceType =
   | "FedEx International Priority"
@@ -47,6 +48,7 @@ export interface TimelineEvent {
   description: string;
   completed: boolean;
   icon: string;
+  paid?: boolean;
 }
 
 export interface ParcelInfo {
