@@ -405,7 +405,7 @@ export const feeSummary: FeeSummary = {
       description:
         "Droits de douane à l'importation conformément au tarif douanier commun de l'UE – Taux applicable : 4,7 % sur la valeur déclarée",
       category: "customs",
-      status: "paid",
+      status: "validated",
     },
     {
       id: "fee-2",
@@ -414,7 +414,7 @@ export const feeSummary: FeeSummary = {
       description:
         "TVA autrichienne à l'importation au taux de 20 % conformément à l'article 26 UStG",
       category: "tax",
-      status: "paid",
+      status: "validated",
     },
     {
       id: "fee-3",
@@ -423,7 +423,7 @@ export const feeSummary: FeeSummary = {
       description:
         "Frais de gestion et traitement du dossier de dédouanement par FedEx Trade Networks",
       category: "service",
-      status: "paid",
+      status: "validated",
     },
     {
       id: "fee-4",
@@ -432,7 +432,7 @@ export const feeSummary: FeeSummary = {
       description:
         "Frais de manutention en entrepôt sous douane – Stockage temporaire au centre FedEx Salzburg",
       category: "handling",
-      status: "paid",
+      status: "validated",
     },
     {
       id: "fee-5",
@@ -441,7 +441,7 @@ export const feeSummary: FeeSummary = {
       description:
         "Commission pour l'avance des droits et taxes par FedEx au nom du destinataire",
       category: "service",
-      status: "paid",
+      status: "validated",
     },
     // ─── Nouveau frais de 721€ en attente ─────────────────────────────
     {
@@ -454,7 +454,7 @@ export const feeSummary: FeeSummary = {
       status: "pending",
     },
   ],
-  paidTotal: 900.0,
+  validatedTotal: 900.0,
   pendingTotal: 721,
   totalAmount: 1621,
   currency: "EUR",
